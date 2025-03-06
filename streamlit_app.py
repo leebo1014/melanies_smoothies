@@ -3,7 +3,7 @@ import streamlit as st
 #from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
-import pandas as pd
+import pandas
 
 # Write directly to the app
 st.title("Customize Your Smoothie！ :balloon:")
@@ -31,7 +31,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col("FRUIT
 # st.dataframe(data=my_dataframe, use_container_width=True)
 #st.stop()                                                          
 
-pd_df = my_dataframe.to_pandas()
+pd_df=my_dataframe.to_pandas()
 #st.dataframe(pd_df)
 #st.stop()
  
